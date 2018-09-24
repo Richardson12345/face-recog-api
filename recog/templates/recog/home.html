@@ -1,0 +1,16 @@
+{% extends "recog/base.html" %}
+{% block content %}
+    {% csrf_token %}
+    {% for post in posts %}
+    <h1>
+        {{post.title}}
+    </h1>
+    <p>
+        {{post.date_posted|date:"F d, Y" }}
+    </p>
+    <p>
+        {{post.content}}
+    </p>
+    <hr>
+    {% endfor %}
+{% endblock content %}
